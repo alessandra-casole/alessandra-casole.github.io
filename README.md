@@ -5,24 +5,17 @@ This is the first project carried out during the start2impact University course 
 ## Table of contents
 
 - [Overview](#overview)
-  - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
 
-
 ## Overview
-
-### Screenshot
-
-![](./screenshot.jpg)
-
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: https://github.com/alessandra-casole/alessandra-casole.github.io
+- Live Site URL: https://alessandra-casole.github.io/
 
 ## My process
 
