@@ -276,13 +276,6 @@ let typed = new Typed(".auto-type", {
 
 // document.addEventListener('DOMContentLoaded', doStuff);
 
-/* Google Analytics */
-window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2MKKS6FFG5');
-
 
 
 
