@@ -265,9 +265,9 @@ ScrollReveal().reveal('.right-diff-reveal', {
 /* Hero - text animation */
 let typed = new Typed(".auto-type", {
     strings: ["Developer.", "Freelancer."],
-    typeSpeed: 150,
-    backSpeed: 150,
-    startDelay: 900,
+    typeSpeed: 155,
+    backSpeed: 140,
+    startDelay: 2100,
     loop: true
 })
 
