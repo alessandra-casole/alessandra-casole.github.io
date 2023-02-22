@@ -80,7 +80,8 @@ nav {
             transition: transform .5s ease 0s;
         }
 
-        &:hover::after {
+        &:hover::after,
+        &:focus-visible::after {
             width: 100%;
             transform: scaleX(1);
         }
@@ -363,13 +364,19 @@ nav {
     color: $body-bg;
 
     &:hover,
-    &:first-child:active {
+    &:first-child:active,
+    &:focus-visible {
         background-color: $logo-clr;
         transition: .3s ease;
         transform: scale(.98);
         box-shadow: 0 8px 9px -4px rgb(169 36 25 / 30%),
             0 4px 18px 0 rgb(169 36 25 / 20%);
         color: $body-bg;
+    }
+    
+    &:focus-visible {
+        outline: 3px solid $par-clr;
+        outline-offset: 2px;
     }
 }
 
@@ -519,13 +526,20 @@ nav {
 
     a {
         color: $body-bg;
-        margin: 0 5px;
+        margin: 0 -4px;
         font-size: 19.5px;
         display: inline-block;
         transition: 0.3s;
 
         &:hover {
             color: $logo-clr;
+        }
+        
+        &:focus-visible {
+            outline: 2px solid $body-bg;
+            border-radius: 100%;
+            color: $logo-clr;
+            outline-offset: 0.1px;
         }
     }
 }
@@ -575,6 +589,12 @@ nav {
             .demo:hover .button-icon {
                 transform: translateX(.25rem);
             }
+        }
+        
+        .btn-close:focus-visible {
+            outline: 3px solid  $body-bg-darker;
+            border-radius: 25px;
+            outline-offset: 2px;
         }
     }
 }
@@ -707,6 +727,12 @@ svg.bi.bi-exclamation-circle {
     border-radius: 50%;
     opacity: 0;
     transition: .5s ease, transform .3s;
+    
+    &:focus-visible {
+        outline: 3px solid $par-clr;
+        border-radius: 100%;
+        outline-offset: 2px;
+    }
 
     &:hover {
         transform: translateY(-.25rem);
