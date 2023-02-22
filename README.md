@@ -14,7 +14,7 @@ This is the first project carried out during the start2impact University course 
 
 ### Links
 
-- Solution URL: https://github.com/alessandra-casole/alessandra-casole.github.io
+- Code URL: https://github.com/alessandra-casole/alessandra-casole.github.io
 - Live Site URL: https://alessandra-casole.github.io/
 
 ## My process
