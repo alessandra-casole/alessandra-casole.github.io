@@ -29,6 +29,11 @@ This is the first project carried out during the start2impact University course 
 - JavaScript
 - Mobile-first workflow
 
+- EmailJS
+- Typed.js
+- Scroll Reveal
+- Isotope.pkgd
+
 
 ## Author
 
