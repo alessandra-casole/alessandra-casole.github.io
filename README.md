@@ -28,6 +28,7 @@ This is the first project carried out during the start2impact University course 
 - Bootstrap
 - JavaScript
 - Mobile-first workflow
+- Media Queries
 
 - EmailJS
 - Typed.js
