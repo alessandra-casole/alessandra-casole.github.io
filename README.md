@@ -5,12 +5,17 @@ This is the first project carried out during the start2impact University course 
 ## Table of contents
 
 - [Overview](#overview)
+  - [Mockup](#mockup)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
 
 ## Overview
+
+### Mockup
+
+![](./mockup.png)
 
 ### Links
 
