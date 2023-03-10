@@ -47,7 +47,7 @@ img {
   border: 0;
 }
 
-nav {
+.nav-scroll {
   transition: background 250ms ease-in;
 }
 
@@ -68,8 +68,7 @@ nav {
   transform: scaleX(0);
   transition: transform 0.5s ease 0s;
 }
-.navbar-nav .nav-link:hover::after,
-.navbar-nav .nav-link:focus-visible::after {
+.navbar-nav .nav-link:hover::after, .navbar-nav .nav-link:focus-visible::after {
   width: 100%;
   transform: scaleX(1);
 }
@@ -86,17 +85,21 @@ nav {
 }
 
 /* Navbar change on scroll */
-.nav-scrolled {
+.nav-scrolled,
+.nav-prj {
   background-color: #f5f5f5;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.15);
 }
-.nav-scrolled .navbar-nav .nav-link {
+.nav-scrolled .navbar-nav .nav-link,
+.nav-prj .navbar-nav .nav-link {
   color: #2E2E2F;
 }
-.nav-scrolled .navbar-nav .nav-link.active {
+.nav-scrolled .navbar-nav .nav-link.active,
+.nav-prj .navbar-nav .nav-link.active {
   color: #2E2E2F;
 }
-.nav-scrolled .navbar-toggler-icon {
+.nav-scrolled .navbar-toggler-icon,
+.nav-prj .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(46, 46, 47 %29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
@@ -311,21 +314,49 @@ nav {
   background-color: #7d170f;
   box-shadow: 0 4px 9px -4px #a92419;
   padding: 10px 24px;
-  font-size: 0.7875rem;
+  font-size: 0.8125rem;
   border-radius: 3.125rem;
   color: #f5f5f5;
 }
-.btn-prj:hover, .btn-prj:first-child:active, .btn-prj:focus-visible  {
+.btn-prj:hover, .btn-prj:first-child:active, .btn-prj:focus-visible {
   background-color: #7d170f;
   transition: 0.3s ease;
   transform: scale(0.98);
   box-shadow: 0 8px 9px -4px rgba(169, 36, 25, 0.3), 0 4px 18px 0 rgba(169, 36, 25, 0.2);
   color: #f5f5f5;
 }
-
 .btn-prj:focus-visible {
   outline: 3px solid #2E2E2F;
   outline-offset: 2px;
+}
+
+.letter-sp {
+  letter-spacing: 0.6px;
+}
+
+.btn-trs {
+  background-color: transparent;
+  border-color: #7d170f;
+  color: #7d170f;
+}
+.btn-trs:hover, .btn-trs:focus-visible {
+  background-color: transparent;
+  border-color: #7d170f;
+  color: #7d170f;
+}
+
+/* CV */
+.resume .fs-15 {
+  font-size: 0.96875rem;
+}
+.resume a:hover {
+  color: #e6e6e6 !important;
+}
+.resume .list-unstyled li {
+  list-style-type: none;
+}
+.resume li {
+  list-style-type: disc;
 }
 
 /* Services Section */
@@ -334,7 +365,7 @@ nav {
 }
 
 #services,
-#contact {
+#projects {
   background-color: #e6e6e6;
 }
 
@@ -362,6 +393,10 @@ nav {
 }
 
 /* Projects */
+.prj {
+  margin-top: 5rem;
+}
+
 .portfolio-flters {
   border-radius: 50px;
   padding: 2px 15px;
@@ -469,7 +504,6 @@ nav {
 .project-links a:hover {
   color: #7d170f;
 }
-
 .project-links a:focus-visible {
   outline: 2px solid #f5f5f5;
   border-radius: 100%;
@@ -519,7 +553,6 @@ nav {
 .modal-content .modal-body .demo:hover .button-icon {
   transform: translateX(0.25rem);
 }
-
 .modal-content .btn-close:focus-visible {
   outline: 3px solid #e6e6e6;
   border-radius: 25px;
@@ -641,16 +674,14 @@ svg.bi.bi-exclamation-circle {
   opacity: 0;
   transition: 0.5s ease, transform 0.3s;
 }
-.scrollToTop-btn:hover {
-  transform: translateY(-0.25rem);
-}
-
 .scrollToTop-btn:focus-visible {
   outline: 3px solid #2E2E2F;
   border-radius: 100%;
   outline-offset: 2px;
 }
-
+.scrollToTop-btn:hover {
+  transform: translateY(-0.25rem);
+}
 .scrollToTop-btn a {
   color: #f5f5f5;
 }
@@ -714,6 +745,13 @@ svg.bi.bi-exclamation-circle {
   .sub {
     font-size: 0.90625rem;
   }
+  /* CV */
+  .resume .list-unstyled {
+    display: inline-block;
+  }
+  .resume h1 {
+    font-size: 2.0625rem;
+  }
   /* Projects */
   .modal-content {
     max-width: 400px;
@@ -746,6 +784,9 @@ svg.bi.bi-exclamation-circle {
   .project-wrap,
   .contact-form {
     width: 92.3%;
+  }
+  .btn-ext {
+    width: 55%;
   }
   /* Services */
   .service {
@@ -831,6 +872,10 @@ svg.bi.bi-exclamation-circle {
 }
 @media all and (min-width: 768px) and (max-width: 991.98px) {
   /* Main */
+  /* About */
+  .btn-ext {
+    width: 55%;
+  }
   /* Services */
   .services {
     max-width: 750px;
@@ -870,6 +915,10 @@ svg.bi.bi-exclamation-circle {
   /* Contact*/
   .contact {
     max-width: 420px;
+  }
+  /* Cv */
+  .resume img {
+    max-width: 80%;
   }
 }
 @media all and (min-width: 992px) {
@@ -956,11 +1005,9 @@ svg.bi.bi-exclamation-circle {
   .par-name {
     font-size: 2.03rem;
   }
-  
   .pr-bar {
     max-width: 91%;
   }
-  
   /* Service */
   .services,
   .contact {
