@@ -1,7 +1,7 @@
 // function doStuff() {
 
 /* Navbar - change on scroll */
-const nav = document.querySelector(".nav-scroll");
+const nav = document.querySelector("nav");
 const sectionOne = document.querySelector(".hero-section");
 
 const sectionOneOptions = {
@@ -46,6 +46,56 @@ let observer = new IntersectionObserver(callback, { threshold : 0.5 } );
 elements_to_watch.forEach((element) => {
     observer.observe(element);
 });
+
+/* Porfolio isotope and filter */
+
+ /* Easy selector helper function */
+const select = (el, all = false) => {
+    el = el.trim()
+    if (all) {
+      return [...document.querySelectorAll(el)]
+    } else {
+      return document.querySelector(el)
+    }
+  }
+
+/* Easy event listener function */
+const on = (type, el, listener, all = false) => {
+    let selectEl = select(el, all)
+
+  if (selectEl) {
+    if (all) {
+      selectEl.forEach(e => e.addEventListener(type, listener))
+    } else {
+        selectEl.addEventListener(type, listener)
+    }
+  }
+ }
+
+  window.addEventListener('load', () => {
+    let portfolioContainer = select('.portfolio-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.portfolio-item',
+        layoutMode: 'fitRows'
+      });
+
+      let portfolioFilters = select('.portfolio-flters li', true);
+
+      on('click', '.portfolio-flters li', function(e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+      }, true);
+    }
+
+  });
 
 /* Form - Email JS*/
 (function(){
@@ -92,14 +142,11 @@ function resetForm() {
 
 /* Copyright */
 function updateCopyrightYear() {
-  const d = new Date();
-  const currentYear = d.getFullYear();
-  const elements = document.getElementsByClassName("year");
-  for (let i = 0; i < elements.length; i++) {
-    elements[i].innerHTML = currentYear;
+    var d = new Date();
+    var currentYear = d.getFullYear();
+    document.getElementById("year").innerHTML = currentYear;
   }
-}
-
+  
 window.requestAnimationFrame(updateCopyrightYear);
 
 
@@ -119,7 +166,7 @@ ScrollReveal({
     delay: 100
 });
 
-ScrollReveal().reveal('.about h2', {
+ScrollReveal().reveal('.about h2, .projects h2', {
     delay: 500, 
     origin: 'top'
 });
@@ -150,16 +197,16 @@ ScrollReveal().reveal('.services .line, .contact .line', {
     distance: '100px' 
 });
 
-ScrollReveal().reveal('.about .sub-clr', { 
+ScrollReveal().reveal('.about .sub-clr, .projects .sub-clr', { 
     delay: 600
 });
 
-ScrollReveal().reveal('.h-link', { 
+ScrollReveal().reveal('.h-link, .portfolio-flters li, .project-wrap', { 
     delay: 500,  
     interval: 200 
 });
 
-ScrollReveal().reveal('.about .line', { 
+ScrollReveal().reveal('.about .line, .projects .line', { 
     delay: 500,  
     interval: 200, 
     distance: '100px' 

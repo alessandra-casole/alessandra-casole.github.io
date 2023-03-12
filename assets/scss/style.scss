@@ -58,7 +58,7 @@ img {
     border: 0;
 }
 
-.nav-scroll {
+nav {
     transition: background 250ms ease-in;
 }
 
@@ -102,8 +102,7 @@ img {
 }
 
 /* Navbar change on scroll */
-.nav-scrolled,
-.nav-prj {
+.nav-scrolled {
     background-color: $body-bg;
     box-shadow: 0 2px 6px 0 rgb(0 0 0 / 15%);
 
@@ -360,7 +359,7 @@ img {
     background-color: $logo-clr;
     box-shadow: 0 4px 9px -4px #a92419;
     padding: 10px 24px;
-    font-size: 0.8125rem;
+    font-size: 0.7875rem;
     border-radius: 3.125rem;
     color: $body-bg;
 
@@ -374,48 +373,10 @@ img {
             0 4px 18px 0 rgb(169 36 25 / 20%);
         color: $body-bg;
     }
-
+    
     &:focus-visible {
         outline: 3px solid $par-clr;
         outline-offset: 2px;
-    }
-}
-
-.letter-sp {
-    letter-spacing: .6px;
-}
-
-.btn-trs {
-    background-color: transparent;
-    border-color: $logo-clr;
-    color: $logo-clr;
-
-    &:hover,
-    &:focus-visible {
-        background-color: transparent;
-        border-color: $logo-clr;
-        color: $logo-clr;
-    }
-}
-
-/* CV */
-
-.resume {
-
-    .fs-15 {
-        font-size: .96875rem;
-    }
-
-    a:hover {
-        color: $body-bg-darker !important;
-    }
-
-    .list-unstyled li {
-        list-style-type: none;
-    }
-
-    li {
-        list-style-type: disc;
     }
 }
 
@@ -425,7 +386,7 @@ img {
 }
 
 #services,
-#projects {
+#contact {
     background-color: $body-bg-darker;
 }
 
@@ -457,11 +418,6 @@ img {
 }
 
 /* Projects */
-
-.prj {
-    margin-top: 5rem;
-}
-
 .portfolio-flters {
     border-radius: 50px;
     padding: 2px 15px;
@@ -578,7 +534,7 @@ img {
         &:hover {
             color: $logo-clr;
         }
-
+        
         &:focus-visible {
             outline: 2px solid $body-bg;
             border-radius: 100%;
@@ -614,7 +570,6 @@ img {
 
         .modal-body {
             padding: 1.25rem;
-            margin-bottom: 1rem;
 
             h3 {
                 letter-spacing: -0.3px;
@@ -634,9 +589,9 @@ img {
                 transform: translateX(.25rem);
             }
         }
-
+        
         .btn-close:focus-visible {
-            outline: 3px solid $body-bg-darker;
+            outline: 3px solid  $body-bg-darker;
             border-radius: 25px;
             outline-offset: 2px;
         }
@@ -771,7 +726,7 @@ svg.bi.bi-exclamation-circle {
     border-radius: 50%;
     opacity: 0;
     transition: .5s ease, transform .3s;
-
+    
     &:focus-visible {
         outline: 3px solid $par-clr;
         border-radius: 100%;
@@ -856,16 +811,6 @@ svg.bi.bi-exclamation-circle {
         font-size: 0.90625rem;
     }
 
-    /* CV */
-    
-    .resume .list-unstyled {
-        display: inline-block;
-    }
-
-    .resume h1 {
-        font-size: 2.0625rem;
-    }
-
     /* Projects */
     .modal-content {
         max-width: 400px;
@@ -905,10 +850,6 @@ svg.bi.bi-exclamation-circle {
     .project-wrap,
     .contact-form {
         width: 92.3%;
-    }
-
-    .btn-ext {
-        width: 55%;
     }
 
     /* Services */
@@ -1020,11 +961,6 @@ svg.bi.bi-exclamation-circle {
 
     /* Main */
 
-    /* About */
-    .btn-ext {
-        width: 55%;
-    }
-
     /* Services */
     .services {
         max-width: 750px;
@@ -1073,11 +1009,6 @@ svg.bi.bi-exclamation-circle {
     /* Contact*/
     .contact {
         max-width: 420px;
-    }
-
-    /* Cv */
-    .resume img {
-        max-width: 80%;
     }
 }
 
@@ -1187,7 +1118,7 @@ svg.bi.bi-exclamation-circle {
     .par-name {
         font-size: 2.03rem;
     }
-
+    
     .pr-bar {
         max-width: 91%;
     }
