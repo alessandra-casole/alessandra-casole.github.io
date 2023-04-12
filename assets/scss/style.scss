@@ -565,11 +565,15 @@ nav {
 
     &-content {
         max-width: 380px;
-        border-color: #0C121E;
+        outline: 1px solid;
         box-shadow: 0px 0px 5px 0px #0c121e;
 
         .modal-body {
             padding: 1.25rem;
+
+            .outline {
+                outline: 1px solid #000000;
+            }
 
             h3 {
                 letter-spacing: -0.3px;
