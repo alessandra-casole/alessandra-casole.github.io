@@ -1,26 +1,44 @@
-# My Portfolio Website
+<h3 align="center">My Portfolio Website</h3>
+<p align="center">
+  <a href="https://alessandracasole-dev.com"><strong>View Demo »</strong></a>
+</p>
 
-This is the first project carried out during the start2impact University course in Front End Development.
-
-## Table of contents
-
-- [Overview](#overview)
-  - [Mockup](#mockup)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-- [Author](#author)
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#overview">Overview</a>
+      <ul>
+        <li><a href="#about-the-project">About The Project</a></li>
+        <li><a href="#links">Links</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#my-process">My Process</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#author">Author</a></li>
+  </ol>
+</details>
 
 ## Overview
 
-### Mockup
-
 ![](./mockup.png)
+
+### About the project
+
+This is the first project carried out during the start2impact University course in Front End Development. 
+
+
+It consists of the creation of a personal website in which to show one's personality, passions and skills in web development.
 
 ### Links
 
-- Code URL: https://github.com/alessandra-casole/alessandra-casole.github.io
-- Live Site URL: https://alessandra-casole.github.io/
+- Preview Site: [alessandracasole-dev.com](https://alessandracasole-dev.com/)
+- View Code: [github.com/alessandra-casole/alessandra-casole.github.io](https://github.com/alessandra-casole/alessandra-casole.github.io)
 
 ## My process
 
@@ -30,10 +48,11 @@ This is the first project carried out during the start2impact University course 
 - CSS custom properties
 - Flexbox
 - SASS
-- Bootstrap
-- JavaScript
 - Mobile-first workflow
 - Media Queries
+- Bootstrap
+- JavaScript
+
 
 - EmailJS
 - Typed.js
@@ -43,4 +62,4 @@ This is the first project carried out during the start2impact University course 
 
 ## Author
 
-- Frontend Mentor - [@alessandra-casole](https://www.frontendmentor.io/profile/alessandra-casole)
+- Linkedin - [Alessandra Casole](https://www.linkedin.com/in/alessandracasole/)
