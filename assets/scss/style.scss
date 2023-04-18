@@ -82,7 +82,8 @@ nav {
 
         &:hover::after,
         &:focus-visible::after {
-            width: 100%;
+            width: 45%;
+            margin: 0 auto;
             transform: scaleX(1);
         }
 
@@ -96,7 +97,8 @@ nav {
         background-color: $logo-clr;
         height: 2px;
         display: block;
-        width: 100%;
+        width: 45%;
+        margin: 0 auto;
         transform: none;
     }
 }
@@ -136,7 +138,7 @@ nav {
 
 /* Main */
 .font-1 {
-    font-size: 2.5em;
+    font-size: 2.5625rem;
     letter-spacing: -1.1px;
 }
 
@@ -272,6 +274,7 @@ nav {
 
 .sub-clr {
     color: $sub-clr;
+    font-size: 1.0313rem;
 }
 
 /* About Section */
@@ -290,76 +293,49 @@ nav {
 .portfolio-pic {
     width: 91%;
 
+    &::before {
+        position: absolute;
+        content: "";
+        right: -20px;
+        top: 20px;
+        border: 10px solid $logo-clr;
+        border-radius: .375rem;
+        width: 100%;
+        height: 100%;
+        z-index: -100;
+    }
+
     img {
-        background-color: $body-bg-darker;
         box-shadow: -1px 2px 7px 2px rgb(0 0 0 / 22%);
+        z-index: 100;
     }
 }
 
 .par-name {
-    font-size: 1.75rem;
+    font-size: 1.8125rem;
+    // font-size: 1.75rem;
     letter-spacing: -1px;
     padding-top: 2.2rem;
 }
 
 .sub {
     letter-spacing: 2.5px;
-    font-size: 0.875rem;
+    font-size: .9375rem;
+    // font-size: 0.875rem;
     margin-top: -6px;
 }
 
 .section-txt {
     text-align: justify;
     line-height: 1.75;
-    font-size: 1.03125rem;
-}
-
-/* Progress bar */
-.pr-bar {
-
-    h3 {
-        font-size: 1rem;
-    }
-
-    .progress {
-        height: 0.8rem;
-        box-shadow: inset 0 0 5px #b3b3b3;
-        border-radius: 1.25rem;
-        margin-bottom: 1.28rem;
-    }
-
-    .progress-bar {
-        background-color: $logo-clr;
-        border-radius: 1.25rem;
-
-        &.active {
-            animation: animate-positive 2s ease-out 600ms forwards;
-        }
-    }
-
-    .progress-value {
-        font-size: 0.9375rem;
-        color: $par-clr;
-    }
-}
-
-@-webkit-keyframes animate-positive {
-    0% {
-        width: 0;
-    }
-}
-
-@keyframes animate-positive {
-    0% {
-        width: 0;
-    }
+    font-size: 1.0625rem;
 }
 
 .btn-prj {
     background-color: $logo-clr;
     box-shadow: 0 4px 9px -4px #a92419;
     padding: 10px 24px;
-    font-size: 0.7875rem;
+    font-size: .85rem;
     border-radius: 3.125rem;
     color: $body-bg;
 
@@ -373,11 +349,26 @@ nav {
             0 4px 18px 0 rgb(169 36 25 / 20%);
         color: $body-bg;
     }
-    
+
     &:focus-visible {
         outline: 3px solid $par-clr;
         outline-offset: 2px;
     }
+}
+
+/* Skills */
+
+.skill i {
+    font-size: 2rem;
+    color: $logo-clr;
+}
+
+.skill-title {
+    font-size: 1.0625rem;
+}
+
+.ps-1-3 {
+    padding-left: 1.3rem;
 }
 
 /* Services Section */
@@ -407,13 +398,13 @@ nav {
     }
 
     h3 {
-        font-size: 1.247rem;
+        font-size: 1.3125rem;
         letter-spacing: -.7px;
     }
 
     p {
         padding: 0.4rem 1.25rem 1.5rem 1.25rem;
-        font-size: 1.03125rem;
+        font-size: 1.0625rem;
     }
 }
 
@@ -425,9 +416,9 @@ nav {
     li {
         cursor: pointer;
         display: inline-block;
-        padding: 8px 16px;
+        padding: 9px 16px;
         font-weight: 600;
-        font-size: 0.96875rem;
+        font-size: 1.0313rem;
         line-height: 1;
         color: $body-bg;
         background: $par-clr;
@@ -509,13 +500,13 @@ nav {
 
     p {
         color: $body-bg;
-        font-size: 0.8125rem;
+        font-size: .875rem;
         margin: 0;
         margin-bottom: 9px;
     }
 
     h4 {
-        font-size: 1.21875rem;
+        font-size: 1.2813rem;
         letter-spacing: -.4px;
         color: $body-bg;
     }
@@ -674,7 +665,7 @@ svg.bi.bi-exclamation-circle {
 #messageSuccess {
     display: none;
     color: #076e07;
-    font-size: 17px;
+    font-size: 1.0625rem;
     margin-top: -8px;
     margin-bottom: 26px;
     padding: 0 5px;
@@ -715,6 +706,10 @@ svg.bi.bi-exclamation-circle {
 .hero-section i,
 .footer i {
     font-size: 1.375rem;
+}
+
+.copy {
+    font-size: .8938rem;
 }
 
 /* Scroll to top button */
@@ -811,10 +806,6 @@ svg.bi.bi-exclamation-circle {
         letter-spacing: -1.3px;
     }
 
-    .sub {
-        font-size: 0.90625rem;
-    }
-
     /* Projects */
     .modal-content {
         max-width: 400px;
@@ -832,10 +823,6 @@ svg.bi.bi-exclamation-circle {
         font-size: 1.5rem;
     }
 
-    .copy {
-        font-size: .885rem;
-    }
-
     /* Scroll to top button */
     .scrollToTop-btn {
         bottom: 20px;
@@ -850,15 +837,15 @@ svg.bi.bi-exclamation-circle {
     }
 
     .section-txt,
-    .pr-bar,
     .project-wrap,
-    .contact-form {
-        width: 92.3%;
+    .contact-form,
+    .skills-container {
+        width: 94%;
     }
 
     /* Services */
     .service {
-        max-width: 290px;
+        max-width: 300px;
 
         p {
             line-height: 1.6;
@@ -881,7 +868,7 @@ svg.bi.bi-exclamation-circle {
     /* Nav */
     .navbar-nav {
         gap: 1.125em;
-        font-size: 1.03rem;
+        font-size: 1.0625rem;
 
         .nav-link {
             color: $body-bg;
@@ -919,10 +906,6 @@ svg.bi.bi-exclamation-circle {
         width: 4.3rem;
     }
 
-    .portfolio-pic {
-        width: 100%;
-    }
-
     .sub {
         margin-top: -9.5px;
     }
@@ -935,13 +918,14 @@ svg.bi.bi-exclamation-circle {
         padding-bottom: 4.1rem !important;
     }
 
-    .pr-bar {
-        margin-top: 2rem;
-    }
-
     /* Projects */
     .projects {
         max-width: 720px;
+    }
+
+    .portfolio-flters li {
+        padding: 8px 16px;
+        font-size: 1rem;
     }
 
     /* Form */
@@ -979,31 +963,6 @@ svg.bi.bi-exclamation-circle {
         font-size: 0.98rem;
         padding: 0.4rem 1.25rem 1rem 1.25rem;
         line-height: 1.53;
-    }
-
-    /* Projects*/
-    .mq h4 {
-        font-size: 1.125rem;
-    }
-
-    .mq::before {
-        width: 38px;
-        height: 38px;
-    }
-
-    .mq::after {
-        width: 38px;
-        height: 38px;
-    }
-
-    .project-wrap:hover .mq::before {
-        left: 8.5px;
-        top: 10px !important;
-    }
-
-    .project-wrap:hover .mq::after {
-        right: 8.5px;
-        bottom: 10px !important;
     }
 
     /* Contact*/
@@ -1054,6 +1013,15 @@ svg.bi.bi-exclamation-circle {
         padding-bottom: 4rem !important;
     }
 
+    .portfolio-pic::before {
+        right: -30px;
+        top: 30px;
+    }
+
+    .btn-prj {
+        font-size: .8125rem;
+    }
+
     /* Services */
     .services,
     .contact {
@@ -1067,14 +1035,6 @@ svg.bi.bi-exclamation-circle {
     /* Projects */
     .projects {
         max-width: 840px;
-    }
-
-    .project-wrap:hover .mq::before {
-        left: 10px;
-    }
-
-    .project-wrap:hover .mq::after {
-        right: 10px;
     }
 
     /* Form */
@@ -1111,18 +1071,14 @@ svg.bi.bi-exclamation-circle {
     }
 
     /* About Section */
-    .portfolio-pic {
-        width: 90%;
-    }
+    // .portfolio-pic {
+    //     width: 90%;
+    // }
 
     .par-name {
         font-size: 2.03rem;
     }
     
-    .pr-bar {
-        max-width: 91%;
-    }
-
     /* Service */
     .services,
     .contact {
