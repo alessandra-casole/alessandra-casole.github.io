@@ -338,12 +338,12 @@ nav {
     font-size: .85rem;
     border-radius: 3.125rem;
     color: $body-bg;
+    transition: .3s ease;
 
     &:hover,
     &:first-child:active,
     &:focus-visible {
         background-color: $logo-clr;
-        transition: .3s ease;
         transform: scale(.98);
         box-shadow: 0 8px 9px -4px rgb(169 36 25 / 30%),
             0 4px 18px 0 rgb(169 36 25 / 20%);
@@ -418,17 +418,25 @@ nav {
         display: inline-block;
         padding: 9px 16px;
         font-weight: 600;
-        font-size: 1.0313rem;
+        font-size: .85rem;
         line-height: 1;
         color: $body-bg;
         background: $par-clr;
         margin: 0 3px 10px 3px;
         transition: all 0.3s ease-in-out;
         border-radius: 2rem;
+        transition: .3s ease;
+        box-shadow: 0 4px 9px -4px #4b4b4d;
 
-        &:hover,
         &.filter-active {
             background: $logo-clr;
+            box-shadow: 0 4px 9px -4px #a92419;
+        }
+
+        &:hover {
+            transform: scale(.98);
+            background: $logo-clr;
+            box-shadow: 0 8px 9px -4px rgb(169 36 25 / 30%), 0 4px 18px 0 rgb(169 36 25 / 20%);
         }
     }
 }
@@ -461,7 +469,7 @@ nav {
 }
 
 .light::before {
-    background: rgba(0, 0, 0, 0.68) !important;
+    background: rgba(0, 0, 0, 0.8) !important;
 }
 
 .portfolio-info {
@@ -925,7 +933,7 @@ svg.bi.bi-exclamation-circle {
 
     .portfolio-flters li {
         padding: 8px 16px;
-        font-size: 1rem;
+        font-size: .9187rem;
     }
 
     /* Form */
@@ -1071,10 +1079,6 @@ svg.bi.bi-exclamation-circle {
     }
 
     /* About Section */
-    // .portfolio-pic {
-    //     width: 90%;
-    // }
-
     .par-name {
         font-size: 2.03rem;
     }
