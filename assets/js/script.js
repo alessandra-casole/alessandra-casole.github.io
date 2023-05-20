@@ -1,113 +1,83 @@
-// function doStuff() {
-
 /* Navbar - change on scroll */
 const nav = document.querySelector("nav");
 const sectionOne = document.querySelector(".hero-section");
 
 const sectionOneOptions = {
-    rootMargin: "-200px 0px 0px 0px"
+  rootMargin: "-200px 0px 0px 0px"
 };
 
-const sectionOneObserver = new IntersectionObserver(function(
-  entries, 
-  sectionOneObserver
-) {
-  entries.forEach(entry => {
+const sectionOneObserver = new IntersectionObserver((entries, sectionOneObserver) => {
+  entries.forEach((entry) => {
     if(!entry.isIntersecting) {
-      nav.classList.add("nav-scrolled");
+        nav.classList.add("nav-scrolled");
     } else {
-      nav.classList.remove("nav-scrolled");
+        nav.classList.remove("nav-scrolled");
     }
-  })
-}, 
-sectionOneOptions);
+  });
+}, sectionOneOptions);
 
 sectionOneObserver.observe(sectionOne);
-
-/* Progress bar - scroll animation */
-let elements_to_watch = document.querySelectorAll(".watch");
-
-// callback
-let callback = function(items) {
-    items.forEach((item) => {
-        if(item.isIntersecting) {
-            item.target.classList.add("active");
-
-        } /*else {
-            item.target.classList.remove("active");
-        }*/
-    });
-}
-
-// observer 
-let observer = new IntersectionObserver(callback, { threshold : 0.5 } );
-
-// apply
-elements_to_watch.forEach((element) => {
-    observer.observe(element);
-});
-
-/* Porfolio isotope and filter */
 
  /* Easy selector helper function */
 const select = (el, all = false) => {
     el = el.trim()
     if (all) {
-      return [...document.querySelectorAll(el)]
+      return [...document.querySelectorAll(el)];
     } else {
-      return document.querySelector(el)
+      return document.querySelector(el);
     }
-  }
+};
 
 /* Easy event listener function */
 const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all)
+  const selectEl = select(el, all);
 
   if (selectEl) {
     if (all) {
-      selectEl.forEach(e => e.addEventListener(type, listener))
+      selectEl.forEach((e) => e.addEventListener(type, listener));
     } else {
-        selectEl.addEventListener(type, listener)
+        selectEl.addEventListener(type, listener);
     }
   }
- }
+};
 
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
+/* Portfolio Filters */ 
+window.addEventListener("load", () => {
+  const portfolioContainer = select(".portfolio-container");
     if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
+      const portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: ".portfolio-item",
+        layoutMode: "fitRows"
       });
 
-      let portfolioFilters = select('.portfolio-flters li', true);
+      const portfolioFilters = select(".portfolio-flters li", true);
 
-      on('click', '.portfolio-flters li', function(e) {
+      on("click", ".portfolio-flters li", function(e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
+        portfolioFilters.forEach((el) => {
+          el.classList.remove("filter-active");
         });
-        this.classList.add('filter-active');
+        this.classList.add("filter-active");
 
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
+        portfolioIsotope.arrange ({
+          filter: this.getAttribute("data-filter")
         });
       }, true);
     }
-
-  });
+});
 
 /* Form - Email JS*/
-(function(){
+(() => {
     emailjs.init("8PWNKMuO5773e7X7P");
 })();
 
-(function() {
+(() => {
   'use strict';
-  window.addEventListener('load', function() {
-    var forms = document.getElementsByClassName('needs-validation');
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
+
+  window.addEventListener("load", () => {
+    const forms = document.querySelectorAll(".needs-validation");
+    const validation = Array.prototype.filter.call(forms, (form) => {
+      form.addEventListener("submit", (event) => {
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
@@ -115,37 +85,35 @@ const on = (type, el, listener, all = false) => {
           event.preventDefault();
           sendEmail();
         }
-        form.classList.add('was-validated');
+        form.classList.add("was-validated");
       }, false);
     });
   }, false);
 })();
 
 function sendEmail() {
-  emailjs.sendForm('service_b7zg4dy', 'template_8ccl4fd', '.needs-validation')
-    .then(function() {
-      document.getElementById("messageSuccess").style.display = "block";
-      setTimeout(function() {
-        resetForm();
-      }, 2600);
-    }, function(error) {
-      console.error('Failed to send email:', error);
-    });
-}
+    emailjs.sendForm("service_b7zg4dy", "template_8ccl4fd", ".needs-validation")
+      .then(() => {
+        document.querySelector("#messageSuccess").style.display = "block";
+        setTimeout(() => {
+          resetForm();
+        }, 2600);
+      });
+};
 
 function resetForm() {
-  var form = document.querySelector('.needs-validation');
-  form.reset();
-  form.classList.remove('was-validated');
-  document.getElementById("messageSuccess").style.display = "none";
-}
+    const form = document.querySelector(".needs-validation");
+    form.reset();
+    form.classList.remove("was-validated");
+    document.querySelector("#messageSuccess").style.display = "none";
+};
 
 /* Copyright */
 function updateCopyrightYear() {
-    var d = new Date();
-    var currentYear = d.getFullYear();
-    document.getElementById("year").innerHTML = currentYear;
-  }
+    let date = new Date();
+    let currentYear = date.getFullYear();
+    document.querySelector("#year").innerHTML = currentYear;
+};
   
 window.requestAnimationFrame(updateCopyrightYear);
 
@@ -269,12 +237,7 @@ let typed = new Typed(".auto-type", {
     backSpeed: 140,
     startDelay: 2100,
     loop: true
-})
-
-
-// }
-
-// document.addEventListener('DOMContentLoaded', doStuff);
+});
 
 
 
