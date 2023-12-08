@@ -332,7 +332,7 @@ nav {
 .btn-prj {
   background-color: $logo-clr;
   box-shadow: 0 4px 9px -4px #a92419;
-  padding: 14px 30px;
+  padding: 15px 30px;
   font-size: 0.85rem;
   border-radius: 3.125rem;
   color: $body-bg;
@@ -359,6 +359,20 @@ nav {
 .skill i {
   font-size: 2rem;
   color: $logo-clr;
+}
+
+.skill .ts-logo {
+  width: 1.7rem;
+  border-radius: 3px;
+  background-color: $logo-clr;
+  color: #fff;
+  font-size: 1.0625rem;
+
+  span {
+    position: relative;
+    bottom: -5px;
+    right: 1px;
+  }
 }
 
 .skill-title {
@@ -998,7 +1012,7 @@ svg.bi.bi-exclamation-circle {
   }
 
   .hero-txt {
-    margin-top: 6rem;
+    margin-top: 9rem;
   }
 
   .hero-animation {
@@ -1069,6 +1083,10 @@ svg.bi.bi-exclamation-circle {
   /* Hero Section */
   .hero-social-links {
     margin-top: 2rem;
+  }
+
+  .hero-txt {
+    margin-left: 4.8rem !important;
   }
 
   /* About Section */
