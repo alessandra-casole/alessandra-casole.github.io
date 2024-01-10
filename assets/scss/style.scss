@@ -63,7 +63,7 @@ nav {
 
 /* Nav links */
 .navbar-nav {
-  gap: 0.6em;
+  gap: 0.2em;
   font-size: 1.25rem;
 
   .nav-link {
@@ -397,6 +397,7 @@ nav {
   box-shadow: 0 0 16px 1px rgb(0 0 0 / 8%), 0px 3px 5px rgb(0 0 0 / 15%);
   background-color: $body-bg;
   transition: all 0.3s ease;
+  cursor: default;
 
   &:hover {
     border-bottom: 3px solid $logo-clr;
@@ -691,6 +692,12 @@ svg.bi.bi-exclamation-circle {
   padding: 0 5px;
 }
 
+.spinner-border {
+  display: none;
+  --bs-spinner-width: 1.5rem;
+  --bs-spinner-height: 1.5rem;
+}
+
 /* Footer */
 #footer {
   box-shadow: 0 0 6px 0 rgb(0 0 0 / 15%);
@@ -737,9 +744,9 @@ svg.bi.bi-exclamation-circle {
   z-index: 999;
   position: fixed;
   right: 0;
-  bottom: 33px;
-  width: 37px;
-  height: 37px;
+  bottom: 14px;
+  width: 40px;
+  height: 40px;
   background-color: $par-clr;
   box-shadow: 0 2px 3px 0 rgb(60 64 67 / 30%),
     0 6px 10px 4px rgb(60 64 67 / 15%);
@@ -953,8 +960,6 @@ svg.bi.bi-exclamation-circle {
 
   /* Scroll to top button */
   .scrollToTop-btn {
-    width: 40px;
-    height: 40px;
     font-size: 1.1rem;
   }
 }

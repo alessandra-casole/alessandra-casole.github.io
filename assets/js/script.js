@@ -74,6 +74,11 @@ window.addEventListener("load", () => {
 });
 
 /* Form - Email JS*/
+
+const loader = document.querySelector(".spinner-border");
+const submitTxt = document.querySelector("#submitTxt");
+const submitBtn = document.querySelector("#submitBtn");
+
 (() => {
   emailjs.init("8PWNKMuO5773e7X7P");
 })();
@@ -106,10 +111,25 @@ window.addEventListener("load", () => {
   );
 })();
 
+function showLoader() {
+  submitTxt.style.display = "none";
+  submitBtn.style.width = "40%";
+  loader.style.display = "inline-block";
+}
+
+function hideLoader() {
+  submitBtn.style.width = "initial";
+  submitTxt.style.display = "inline-block";
+  loader.style.display = "none";
+}
+
 function sendEmail() {
+  showLoader();
+
   emailjs
     .sendForm("service_b7zg4dy", "template_8ccl4fd", ".needs-validation")
     .then(() => {
+      hideLoader();
       document.querySelector("#messageSuccess").style.display = "block";
       setTimeout(() => {
         resetForm();

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Alessandra Casole | Developer Portfolio Website</title>
+    <title>Alessandra Casole | Front-end Developer</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Alessandra Casole" />
@@ -12,7 +12,7 @@
     />
     <meta
       property="og:title"
-      content="Alessandra Casole | Developer Portfolio Website"
+      content="Alessandra Casole | Front-end Developer"
     />
     <meta
       property="og:description"
@@ -114,7 +114,7 @@
         aria-label=" offcanvas navbar"
         role="navigation"
       >
-        <div class="container my-2 gx-5 gx-sm-3 gx-md-3">
+        <div class="container my-2 my-lg-1 gx-5 gx-sm-3 gx-md-3">
           <!-- Logo -->
           <a class="navbar-brand d-flex align-items-center" href="/">
             <img
@@ -137,7 +137,7 @@
           </button>
           <!-- Offcanvas Menu -->
           <div
-            class="offcanvas offcanvas-top vh-100 py-2"
+            class="offcanvas offcanvas-top vh-100 pb-2 pb-md-0"
             tabindex="-1"
             id="offcanvasNavbarLight"
             aria-labelledby="offcanvasNavbarLightLabel"
@@ -145,15 +145,15 @@
             <div class="offcanvas-header">
               <button
                 type="button"
-                class="btn-close ms-auto mt-2 me-2"
+                class="btn-close ms-auto mt-1 me-2"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="offcanvas-body">
-              <ul
-                class="navbar-nav text-center justify-content-md-end flex-grow-1 mt-4 mt-md-0"
-              >
+            <div
+              class="offcanvas-body d-flex justify-content-center align-items-center"
+            >
+              <ul class="navbar-nav text-center ms-md-auto">
                 <li class="nav-item" data-bs-dismiss="offcanvas">
                   <a class="nav-link d-inline-block" href="#home">Home</a>
                 </li>
@@ -1005,10 +1005,16 @@
                 >
                   <button
                     type="submit"
-                    class="btn btn-prj mt-2 mb-2 text-uppercase"
+                    class="btn btn-prj mt-2 mb-2 text-uppercase d-flex justify-content-center align-items-center"
                     value="Send"
+                    id="submitBtn"
                   >
-                    Send message <i class="fa-solid fa-paper-plane"></i>
+                    <span class="submit_text" id="submitTxt"
+                      >Send message
+                      <i class="fa-solid fa-paper-plane"></i></span
+                    ><span class="spinner-border" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </span>
                   </button>
                 </div>
               </form>
@@ -1025,7 +1031,7 @@
         class="footer container d-flex flex-column flex-lg-row-reverse gx-5 gx-sm-2 gx-md-3 py-2 py-lg-3"
       >
         <!-- Section: Social media -->
-        <section class="social-container pt-4 pt-lg-0 me-lg-4">
+        <section class="social-container pt-1 pt-lg-0 me-lg-4">
           <!-- GitHub -->
           <a
             class="btn-floating social-reveal"
@@ -1063,14 +1069,16 @@
         </section>
         <!-- Copyright -->
         <p
-          class="mt-2 mb-4 mt-lg-0 mb-lg-0 align-self-lg-center flex-lg-grow-1 text-lg-start"
+          class="mt-2 mb-2 mb-sm-3 mt-lg-0 mb-lg-0 align-self-lg-center flex-lg-grow-1 text-lg-start"
         >
           <small class="copy"
             >&copy;
             <span> 2023 -</span>
             <span id="year"></span> Coded by
             <span class="fw-500">Alessandra Casole.</span>
-            <span class="d-block d-sm-inline">All rights reserved.</span>
+            <span class="d-block d-sm-inline mb-1 mb-sm-0"
+              >All rights reserved.</span
+            >
           </small>
         </p>
       </div>
