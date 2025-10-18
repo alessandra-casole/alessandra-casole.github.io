@@ -73,76 +73,13 @@ window.addEventListener("load", () => {
   }
 });
 
-/* Form - Email JS*/
+/* Contact */
+document.getElementById("contactBtn").addEventListener("click", () => {
+  const user = "alessandra.casole92";
+  const domain = "gmail.com";
 
-const loader = document.querySelector(".spinner-border");
-const submitTxt = document.querySelector("#submitTxt");
-const submitBtn = document.querySelector("#submitBtn");
-
-(() => {
-  emailjs.init("8PWNKMuO5773e7X7P");
-})();
-
-(() => {
-  "use strict";
-
-  window.addEventListener(
-    "load",
-    () => {
-      const forms = document.querySelectorAll(".needs-validation");
-      const validation = Array.prototype.filter.call(forms, (form) => {
-        form.addEventListener(
-          "submit",
-          (event) => {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            } else {
-              event.preventDefault();
-              sendEmail();
-            }
-            form.classList.add("was-validated");
-          },
-          false
-        );
-      });
-    },
-    false
-  );
-})();
-
-function showLoader() {
-  submitTxt.style.display = "none";
-  submitBtn.style.width = "40%";
-  loader.style.display = "inline-block";
-}
-
-function hideLoader() {
-  submitBtn.style.width = "initial";
-  submitTxt.style.display = "inline-block";
-  loader.style.display = "none";
-}
-
-function sendEmail() {
-  showLoader();
-
-  emailjs
-    .sendForm("service_b7zg4dy", "template_8ccl4fd", ".needs-validation")
-    .then(() => {
-      hideLoader();
-      document.querySelector("#messageSuccess").style.display = "block";
-      setTimeout(() => {
-        resetForm();
-      }, 2600);
-    });
-}
-
-function resetForm() {
-  const form = document.querySelector(".needs-validation");
-  form.reset();
-  form.classList.remove("was-validated");
-  document.querySelector("#messageSuccess").style.display = "none";
-}
+  window.location.href = `mailto:${user}@${domain}`;
+});
 
 /* Copyright */
 function updateCopyrightYear() {
